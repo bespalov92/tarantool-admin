@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Roboto Mono';
+  src: url('assets/fonts/roboto-mono-v30-latin-regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .fa,
 .far {
     font-size: 14px;
@@ -71,7 +78,7 @@
 .x-grid-body {
     border: 0px;
 }
-.x-grid-with-col-lines .x-grid-cell, 
+.x-grid-with-col-lines .x-grid-cell,
 .x-grid-with-row-lines .x-grid-item {
     padding-bottom: 0px;
 }
@@ -88,6 +95,11 @@
     border-width: 1px;
 }
 
+.query-textarea textarea.x-form-text-default {
+  font-family: "Roboto Mono", monospace;
+  font-size: 13px;
+}
+
 .x-panel-body-default {
     border: 0px;
 }
@@ -98,12 +110,12 @@
     border-top: 1px solid #ddd;
 }
 .x-btn.x-btn-disabled.x-btn-default-small {
-    background-color: #999; 
+    background-color: #999;
 }
 .x-btn-default-small {
     border-color: white;
     border-radius: 0px;
-    background-color: #999; 
+    background-color: #999;
 }
 .version-button {
     border-radius: 0px;

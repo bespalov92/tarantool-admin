@@ -18,6 +18,10 @@ RUN wget -q https://use.fontawesome.com/releases/v5.0.6/fontawesome-free-5.0.6.z
     && unzip -q ./fontawesome-free-5.0.6.zip \
     && unzip -q ./ext-6.2.0-gpl.zip
 
+RUN wget -q "https://gwfh.mranftl.com/api/fonts/roboto-mono?download=zip&subsets=latin&variants=regular&formats=woff2" -O roboto-mono.zip \
+    && unzip -q roboto-mono.zip -d ./fonts \
+    && rm roboto-mono.zip
+
 COPY .git .git/
 RUN CI_COMMIT_TAG=$(git describe --tags) \
     CI_COMMIT_REF_NAME=$(git rev-parse --abbrev-ref HEAD) \
@@ -72,3 +76,4 @@ COPY --from=build /build/ext-6.2.0/build/ext-all.js public/admin/ext-6.2.0/ext-a
 COPY --from=build /build/ext-6.2.0/build/classic/theme-crisp public/admin/ext-6.2.0/classic/theme-crisp
 COPY --from=build /build/vendor vendor/
 COPY --from=build /build/version.php var/
+COPY --from=build /build/fonts public/admin/assets/fonts
