@@ -37,6 +37,7 @@ Ext.define('Admin.Database.Query', {
       grow: true,
       flex: 1,
       maxHeight: 300,
+      inputAttrTpl: 'spellcheck="false"',
       listeners: {
         specialkey(f, e) {
           if (e.keyCode == 13 && e.ctrlKey) {
